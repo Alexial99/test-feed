@@ -8,8 +8,12 @@
                     <hr class="hr-color" v-if="index+1<items.length"/>
                 </div>
                 <div class="loading" v-if="loading">
-                    <p>...</p>
-                    Загрузка данных...
+                    <div class="loadingG">
+                        <span id="loadingG_1"></span>
+                        <span id="loadingG_2"></span>
+                        <span id="loadingG_3"></span>
+                    </div>
+                    <p>Загрузка данных...</p>
                 </div>
             </div>
         </div>
@@ -152,4 +156,129 @@
         background-color: #868686;
     }
 
+    .loadingG {
+        text-align: center;
+        width: 150px;
+        height: 25px;
+        margin-left: -25px ;
+    }
+
+    .loadingG span {
+        display: inline-block;
+        vertical-align: middle;
+        width: 10px;
+        height: 10px;
+        margin:14px 20px;
+        border-radius: 5px;
+        animation: loadingG 1.5s infinite alternate;
+        -o-animation: loadingG 1.5s infinite alternate;
+        -ms-animation: loadingG 1.5s infinite alternate;
+        -webkit-animation: loadingG 1.5s infinite alternate;
+        -moz-animation: loadingG 1.5s infinite alternate;
+    }
+
+    #loadingG_1 {
+        animation-delay: 0s;
+        -o-animation-delay: 0s;
+        -ms-animation-delay: 0s;
+        -webkit-animation-delay: 0s;
+        -moz-animation-delay: 0s;
+    }
+
+    #loadingG_2 {
+        animation-delay: 0.45s;
+        -o-animation-delay: 0.45s;
+        -ms-animation-delay: 0.45s;
+        -webkit-animation-delay: 0.45s;
+        -moz-animation-delay: 0.45s;
+    }
+
+    #loadingG_3 {
+        animation-delay: 0.9s;
+        -o-animation-delay: 0.9s;
+        -ms-animation-delay: 0.9s;
+        -webkit-animation-delay: 0.9s;
+        -moz-animation-delay: 0.9s;
+    }
+
+
+    @keyframes loadingG {
+        0% {
+            width: 2px;
+            height: 2px;
+            background-color: rgb(120, 120, 120);
+            transform: translateY(0);
+        }
+
+        100% {
+            width: 4px;
+            height: 4px;
+            background-color: rgb(255, 255, 255);
+            transform: translateY(-10px);
+        }
+    }
+
+    @-o-keyframes loadingG {
+        0% {
+            width: 2px;
+            height: 2px;
+            background-color: rgb(120, 120, 120);
+            -o-transform: translateY(0);
+        }
+
+        100% {
+            width: 4px;
+            height: 4px;
+            background-color: rgb(255, 255, 255);
+            -o-transform: translateY(-10px);
+        }
+    }
+
+    @-ms-keyframes loadingG {
+        0% {
+            width: 2px;
+            height: 2px;
+            background-color: rgb(120, 120, 120);
+            -ms-transform: translateY(0);
+        }
+
+        100% {
+            width: 4px;
+            height: 4px;
+            background-color: rgb(205, 205, 205);
+            -ms-transform: translateY(-10px);
+        }
+    }
+
+    @-webkit-keyframes loadingG {
+        0% {
+            width: 2px;
+            height: 2px;
+            background-color: rgb(120, 120, 120);
+            -webkit-transform: translateY(0);
+        }
+
+        100% {
+            width: 4px;
+            height: 10px;
+            background-color: rgb(205, 205, 205);
+            -webkit-transform: translateY(-10px);
+        }
+    }
+
+    @-moz-keyframes loadingG {
+        0% {
+            width: 2px;
+            height: 2px;
+            background-color: rgb(120, 120, 120);
+            -moz-transform: translateY(0);
+        }
+
+        100% {
+            width: 10px;
+            height: 10px;
+            background-color: rgb(205, 205, 205);
+            -moz-transform: translateY(-10px);
+        }
+    }
 </style>
